@@ -2068,7 +2068,7 @@ section#about-us {
   padding: 7%;
   background-color: #fff; /* Optional: Add background for contrast */
   border: 1px solid #ddd;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 5px 5px 5px 5px;
   margin-right: -22% !important;
   margin-left: 32.5%;
 }
