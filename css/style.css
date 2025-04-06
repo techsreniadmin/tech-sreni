@@ -2057,18 +2057,20 @@ section#about-us {
   border: 1px solid #ddd;
   border-radius: 5px 0px 0px 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-right: 0px !important;
-  margin-left: 2% !important;
-  padding-bottom: 16% !important;
+  /* margin-right: 0px !important; */
+  /* margin-left: 2% !important; */
+  /* padding-bottom: 16% !important; */
   background-color: #182444;
+  width: 100%;
 }
 
 .form-container {
-  padding: 2%;
+  padding: 7%;
   background-color: #fff; /* Optional: Add background for contrast */
   border: 1px solid #ddd;
   border-radius: 0px 5px 5px 0px;
-  margin-right: 0px !important;
+  margin-right: -22% !important;
+  margin-left: 32.5%;
 }
 
 p.service-text-color {
@@ -2108,6 +2110,17 @@ img.img-fluid-logo {
   height: auto;
 }
 
+.site-section-formheading {
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+  position: relative;
+  font-size: 28px; 
+}
+
+button#submitBtn {
+  padding: 5px 50px 5px 50px;
+}
+
 
 /* ......................................................MEDIA QUERIES....................................... */
 @media (max-width: 1200px) {
@@ -2122,9 +2135,7 @@ img.img-fluid-logo {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .tabs {
-        /* flex-direction: column; */
-    }
+
     .content .image img {
         width: 100%;
         position: static;
@@ -2171,9 +2182,7 @@ img.img-fluid-logo {
       margin-top: 10px;
   } */
 
-  div#chatbot-container {
-    
-  }
+
 }
 
 @media (max-width: 480px) {
@@ -2212,9 +2221,6 @@ img.img-fluid-logo {
       margin-right: -2%;
     }
 
-    div#chatbot-container {
-    
-    }
 
     label.form-label {
       font-size: 90%;
@@ -2248,10 +2254,6 @@ img.img-fluid-logo {
   .tab {
     padding: 10px 10px;
     font-size: 13px;
-  }
-
-  div#chatbot-container {
-    
   }
 }
 

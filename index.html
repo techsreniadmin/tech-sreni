@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="images/techsreni.svg">
 
   <meta name="description" content="Tech Sreni is an affordable website company helping small businesses build custom websites, apps, and digital solutions to grow online." />
-  <meta name="keywords" content="low cost development, low cost, affordable, digital partner, partner, digital, technology, tech, WordPress, Wix, hosting, domain, google, Website company, company, IT, Solution, solutions, it solution, Website, WebApp, Web application, Customised Software, Low budget, eCommerce, SEO, HTML, CSS, PHP, Coding Based, javascript, js, sql, pyhton, flutter, c#, windows, linux, iOs, android app, Apps, Applications, Development, Digital Marketing" />
+  <meta name="keywords" content="Tech Sreni, tech, sreni, technology sreni, techsreni, low cost development, low cost, affordable, digital partner, partner, digital, technology, tech, WordPress, Wix, hosting, domain, google, Website company, company, IT, Solution, solutions, it solution, Website, WebApp, Web application, Customised Software, Low budget, eCommerce, SEO, HTML, CSS, PHP, Coding Based, javascript, js, sql, pyhton, flutter, c#, windows, linux, iOs, android app, Apps, Applications, Development, Digital Marketing" />
 
   <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
@@ -617,19 +617,75 @@
     
 
       <!-- ENQUIRY FORM -->
-      <section class="col-lg-12 site-section d-flex" id="enquiry-section" style="padding: 9em 0;">
+      <section class="col-lg-8 site-section d-flex" id="enquiry-section" style="padding: 9em 0;">
         <!-- Enquiry Form -->
+        <div class="form-container flex-item">
+          <h2 class="site-section-formheading text-center">Get a Quote</h2>
+          <div class="form-section">
+            <form id="quoteForm" action="process_form.php" method="POST">
+              <!-- Full Name and Mobile in one line -->
+              <div class="form-group" style="display: flex; gap: 20px; align-items: center; padding-top: 5%;">
+                <div style="flex: 1;">
+                  <label for="fullName" class="form-label">Full Name <span class="required">*</span></label>
+                  <input type="text" class="text-box" id="fullName" name="fullName" placeholder="Enter your full name" style="width: 100%; padding: 10px;" required>
+                </div>
+                <div style="flex: 1;">
+                  <label for="mobile" class="form-label">Mobile Number <span class="required">*</span></label>
+                  <input type="text" class="text-box" id="mobile" name="mobile" placeholder="Enter your mobile number" style="width: 100%; padding: 10px;" required>
+                </div>
+              </div>
+            
+              <!-- Email --><!-- Company Name -->
+              <div class="form-group" style="display: flex; gap: 20px; align-items: center;">
+                <div style="flex: 1;">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="text-box" id="email" name="email" placeholder="Enter your email (optional)">
+                </div>
+                <div style="flex: 1;">
+                  <label for="companyName" class="form-label">Company Name <span class="required">*</span></label>
+                  <input type="text" class="text-box" id="companyName" name="companyName" placeholder="Enter your company name" required>
+                </div>
+              </div>
+            
+              <!-- Project Type --><!-- Budget -->
+              <div class="form-group" style="display: flex; gap: 20px; align-items: center;">
+                <div style="flex: 1;">
+                  <label for="projectType" class="form-label">Project Type <span class="required">*</span></label>
+                  <select id="projectType" class="form-dropdown" name="projectType" required>
+                    <option value="" disabled selected>Select a project type</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Web Application">Web Application</option>
+                    <option value="Customized Software">Customized Software</option>
+                    <option value="Digital Solution">Digital Solution</option>
+                  </select>
+                </div>
+                <div style="flex: 1;">
+                  <label for="budget" class="form-label">Budget</label>
+                  <input type="text" class="text-box" id="budget" name="budget" placeholder="Enter your budget (optional)">
+                </div>
+              </div>
+            
+              <!-- Additional Notes -->
+              <div class="form-group">
+                <label for="notes" class="form-label">Additional Notes</label>
+                <textarea id="notes" class="text-box" name="notes" rows="4" placeholder="Enter any additional information (optional)"></textarea>
+              </div>
+            
+              <!-- Submit Button -->
+              <button type="submit" id="submitBtn" class="btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
         
-      
         <!-- Footer -->
-        <footer class="site-footer flex-item">
+        <footer class="site-footer flex-item" style="padding-top: 5%;">
           <div class="container details-section">
-            <h3 class="section-header">Get in touch</h3>
             <div class="row">
               <div class="col-md-12">
                 <div class="row">
                   <!-- Details Section -->
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <h2 class="footer-heading mb-4">Details</h2>
                     <a href="tel:+919167192594">
                       <p class="contact-info">
@@ -643,7 +699,7 @@
                     </a>
                   </div>
                   <!-- Links Section -->
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                     <h2 class="footer-heading mb-4">Links</h2>
                     <ul class="list-unstyled">
                       <li><a href="#home-section">Home</a></li>
@@ -651,25 +707,32 @@
                       <li><a href="#services-section">Service</a></li>
                     </ul>
                   </div>
-                </div>
-              </div>
-          
-              <!-- Follow Us and Virtual Meet Button -->
-              <div class="col-md-12">
-                <div class="row follow-virtual">
-                  <div class="col-md-6" style="text-align: left;">
+                  <div class="col-md-4" style="text-align: left;">
                     <h2 class="footer-heading mb-4">Follow Us</h2>
                     <a href="https://www.facebook.com/p/8Bit-Tech-Solutions-61558629579998/" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                     <a href="https://www.instagram.com/techsreni/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                     <a href="https://api.whatsapp.com/send/?phone=9167192594&text&type=phone_number&app_absent=0" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a>
                     <!-- <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a> -->
                   </div>
+                </div>
+              </div>
+          
+              <!-- Follow Us and Virtual Meet Button -->
+              <div class="col-md-12">
+                <div class="row follow-virtual">
                   <!-- <div class="col-md-6">
                     <div class="footer-virtual-meet" style="text-align: center;">
                       <button id="footerMeetButton" class="btn btn-primary" style="margin-top: 10%; margin-left: -37%;">Set up Virtual Meet</button>
                     </div>
                   </div> -->
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-5 mt-5 text-center">
+            <div class="col-md-12">
+              <div class="border-top pt-5">
+                <!-- <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a> License information: https://untree.co/license/</p> -->
               </div>
             </div>
           </div>
@@ -722,73 +785,6 @@
           </div> -->
 
         </footer>
-        <div class="form-container flex-item">
-          <div class="form-section">
-          
-          <form id="quoteForm" action="process_form.php" method="POST">
-            <!-- Full Name and Mobile in one line -->
-            <div class="form-group" style="display: flex; gap: 20px; align-items: center;">
-              <div style="flex: 1;">
-                <label for="fullName" class="form-label">Full Name <span class="required">*</span></label>
-                <input type="text" class="text-box" id="fullName" name="fullName" placeholder="Enter your full name" style="width: 100%; padding: 10px;" required>
-              </div>
-              <div style="flex: 1;">
-                <label for="mobile" class="form-label">Mobile Number <span class="required">*</span></label>
-                <input type="text" class="text-box" id="mobile" name="mobile" placeholder="Enter your mobile number" style="width: 100%; padding: 10px;" required>
-              </div>
-            </div>
-          
-            <!-- Email --><!-- Company Name -->
-            <div class="form-group" style="display: flex; gap: 20px; align-items: center;">
-              <div style="flex: 1;">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="text-box" id="email" name="email" placeholder="Enter your email (optional)">
-              </div>
-              <div style="flex: 1;">
-                <label for="companyName" class="form-label">Company Name <span class="required">*</span></label>
-                <input type="text" class="text-box" id="companyName" name="companyName" placeholder="Enter your company name" required>
-              </div>
-            </div>
-          
-            <!-- Project Type --><!-- Budget -->
-            <div class="form-group" style="display: flex; gap: 20px; align-items: center;">
-              <div style="flex: 1;">
-                <label for="projectType" class="form-label">Project Type <span class="required">*</span></label>
-                <select id="projectType" class="form-dropdown" name="projectType" required>
-                  <option value="" disabled selected>Select a project type</option>
-                  <option value="Website Development">Website Development</option>
-                  <option value="Web Application">Web Application</option>
-                  <option value="Customized Software">Customized Software</option>
-                  <option value="Digital Solution">Digital Solution</option>
-                </select>
-              </div>
-              <div style="flex: 1;">
-                <label for="budget" class="form-label">Budget</label>
-                <input type="text" class="text-box" id="budget" name="budget" placeholder="Enter your budget (optional)">
-              </div>
-            </div>
-          
-            <!-- Additional Notes -->
-            <div class="form-group">
-              <label for="notes" class="form-label">Additional Notes</label>
-              <textarea id="notes" class="text-box" name="notes" rows="4" placeholder="Enter any additional information (optional)"></textarea>
-            </div>
-          
-            <!-- Submit Button -->
-            <button type="submit" id="submitBtn" class="btn">Submit</button>
-          </form>
-          
-        </div>
-        </div>
-      </section>
-      <div class="row pt-5 mt-5 text-center">
-        <div class="col-md-12">
-          <div class="border-top pt-5">
-            <p>Copyright &copy;2025. All Rights Reserved. &mdash; Designed & Developed by <strong>Tech Sreni</strong></p>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
