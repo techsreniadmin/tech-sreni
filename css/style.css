@@ -2059,7 +2059,7 @@ section#about-us {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   /* margin-right: 0px !important; */
   /* margin-left: 2% !important; */
-  /* padding-bottom: 16% !important; */
+  padding-bottom: 16% !important;
   background-color: #182444;
   width: 100%;
 }
@@ -2158,6 +2158,7 @@ button#submitBtn {
       width:20vw;
       height: auto;
     }
+
 }
 
 @media (max-width: 576px) {
@@ -2223,21 +2224,21 @@ button#submitBtn {
 
 
     label.form-label {
-      font-size: 90%;
+      font-size: 110%;
     }
 
     input.text-box {
       text-size-adjust: auto;
       font: -webkit-control;
-      font-size: 57%;
+      font-size: 80%;
     }
 
     select.form-dropdown {
-      font-size: 57%;
+      font-size: 80%;
     }
 
     textarea.text-box {
-      font-size: 57%;
+      font-size: 80%;
     }
 
     img.img-fluid-logo {
@@ -2255,6 +2256,25 @@ button#submitBtn {
     padding: 10px 10px;
     font-size: 13px;
   }
+
+  label.form-label {
+    font-size: 105%;
+  }
+
+  input.text-box {
+    text-size-adjust: auto;
+    font: -webkit-control;
+    font-size: 63%;
+  }
+
+  select.form-dropdown {
+    font-size: 63%;
+  }
+
+  textarea.text-box {
+    font-size: 63%;
+  }
+
 }
 
 @media (max-width: 375px) {
