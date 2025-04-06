@@ -2215,8 +2215,6 @@ button#submitBtn {
     }
     .flex-item {
         width: 100%;
-        margin-left: -1%;
-    }
     }
 
     form#quoteForm {
