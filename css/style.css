@@ -16,9 +16,7 @@ body {
   font-weight: 300;
   font-size: 15px;
   background: #EEEEEE;
-  scroll-behavior: smooth;
-  
-  
+  scroll-behavior: smooth;  
 }
   /* @media (min-width: 1080px) {
     body {
