@@ -2428,33 +2428,3 @@ h1 span {
       padding: 0.5rem;
   }
 }
-
-.slider {
-  height: 120px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.slide-track {
-  display: flex;
-  width: calc(200px * 10); /* total slides */
-  animation: scroll 30s linear infinite;
-}
-
-.slider:hover .slide-track {
-  animation-play-state: paused;
-}
-
-.slide {
-  height: 100px;
-  width: 100px;
-  margin: 0 20px;
-  object-fit: contain;
-}
-  
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Loop halfway to blend first set with duplicate */
-}

@@ -31,6 +31,8 @@
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
+  
+  
   <title>Tech Sreni &mdash; Professional website company offering custom, affordable web solutions for startups and individuals.</title>
 
   <style>
@@ -289,6 +291,55 @@
     #send-btn:hover {
       background-color: #17213e;
     }
+    
+     /*Carousel Logic*/
+ 
+ .tech-carousel-container {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.tech-carousel {
+    display: flex;
+    animation: scrollLeft 20s linear infinite;
+    width: max-content;
+}
+.tech-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.tech-item:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.tech-item img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0.75rem;
+}
+
+.tech-item p {
+  font-weight: 500;
+  color: var(--text);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
   </style>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -463,34 +514,62 @@
       <!-- PROGRAMMING LANGUAGE -->
       <section class="site-section programming languages" id="programming-languages-section">
         <div class="container text-center">
-          <div class="slider">
-            <div class="slide-track">
-              <img src="images/python.png" class="slide" alt="python" title="Python">
-              <img src="images/mysql.png" class="slide" alt="MySQL" title="MySQL">
-              <img src="images/html.png" class="slide" alt="HTML5" title="HTML5"> 
-              <img src="images/js.png" class="slide" alt="JavaScript" title="JavaScript">
-              <img src="images/dart.png" class="slide" alt="Dart" title="Dart">
-              <img src="images/flutter.png" class="slide" alt="Flutter" title="Flutter">
-              <img src="images/tailwind.png" class="slide" alt="Tailwind" title="Tailwind">
-              <img src="images/react.png" class="slide" alt="React" title="React"> 
-              <img src="images/supabase.png" class="slide" alt="Supabase" title="Supabase">
-              <img src="images/postgre.png" class="slide" alt="Postgre" title="Postgre">
-              
-              <!-- Duplicate -->
-              <img src="images/python.png" class="slide" alt="python" title="Python">
-              <img src="images/mysql.png" class="slide" alt="MySQL" title="MySQL">
-              <img src="images/html.png" class="slide" alt="HTML5" title="HTML5"> 
-              <img src="images/js.png" class="slide" alt="JavaScript" title="JavaScript">
-              <img src="images/dart.png" class="slide" alt="Dart" title="Dart">
-              <img src="images/flutter.png" class="slide" alt="Flutter" title="Flutter">
-              <img src="images/tailwind.png" class="slide" alt="Tailwind" title="Tailwind">
-              <img src="images/react.png" class="slide" alt="React" title="React"> 
-              <img src="images/supabase.png" class="slide" alt="Supabase" title="Supabase">
-              <img src="images/postgre.png" class="slide" alt="Postgre" title="Postgre">
+          <div class="tech-carousel-container">
+            <div class="tech-carousel">
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                <p>HTML</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                <p>CSS</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                <p>JavaScript</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                <p>Bootstrap</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <p>Python</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                <p>MySQL</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind">
+                <p>Tailwind</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                <p>React</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" alt="Supabase">
+                <p>Supabase</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Postgresql">
+                <p>Postgresql</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                <p>Flutter</p>
+              </div>
+              <div class="tech-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart">
+                <p>Dart</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+
       
                
 
@@ -1019,6 +1098,16 @@ document.getElementById('sendOtp').addEventListener('click', function () {
     chatOutput.appendChild(messageDiv);
     chatOutput.scrollTop = chatOutput.scrollHeight; // Scroll to bottom
   }
+  
+  // Carousel Logic
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    var myCarousel = new bootstrap.Carousel(document.querySelector('#carouselExample'), {
+      interval: 2000,
+      wrap: true
+    });
+  });
+  
 </script>
 
     <script src="js/main.js"></script>
