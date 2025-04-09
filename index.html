@@ -723,11 +723,20 @@
                 </div>
                 <div style="flex: 1;">
                   <label for="mobile" class="form-label">Mobile Number <span class="required">*</span></label>
-                  <input type="text" class="text-box" id="mobile" name="mobile" placeholder="Enter your mobile number" style="width: 100%; padding: 10px;" required>
+                  <div style="display: flex; align-items: center;">
+                    <select id="countryCode" name="countryCode" style="padding: 10px; margin-right: 10px;width: 18%;" required>
+                      <option value="+91" selected>+91 (India)</option>
+                      <option value="+1">+1 (US)</option>
+                      <option value="+44">+44 (UK)</option>
+                      <option value="+61">+61 (Australia)</option>
+                      <!-- Add more country codes as needed -->
+                    </select>
+                    <input type="text" class="text-box" id="mobile" name="mobile" placeholder="Enter your mobile number" style="flex: 1; padding: 10px;" required>
+                  </div>
                 </div>
               </div>
-            
-              <!-- Email --><!-- Company Name -->
+
+              <!-- Email and Company Name -->
               <div class="form-group" style="display: flex; gap: 20px; align-items: center;">
                 <div style="flex: 1;">
                   <label for="email" class="form-label">Email</label>
@@ -738,8 +747,8 @@
                   <input type="text" class="text-box" id="companyName" name="companyName" placeholder="Enter your company name" required>
                 </div>
               </div>
-            
-              <!-- Project Type --><!-- Budget -->
+
+              <!-- Project Type and Budget -->
               <div class="form-group" style="display: flex; gap: 20px; align-items: center;">
                 <div style="flex: 1;">
                   <label for="projectType" class="form-label">Project Type <span class="required">*</span></label>
@@ -756,19 +765,34 @@
                   <input type="text" class="text-box" id="budget" name="budget" placeholder="Enter your budget (optional)">
                 </div>
               </div>
-            
+
               <!-- Additional Notes -->
               <div class="form-group">
                 <label for="notes" class="form-label">Additional Notes</label>
                 <textarea id="notes" class="text-box" name="notes" rows="4" placeholder="Enter any additional information (optional)"></textarea>
               </div>
-            
+
+              <!-- OTP Button -->
+              <div class="form-group" style="margin-top: 20px;">
+                <button type="button" id="sendOtpBtn" class="btn" onclick="sendOtp()">Send OTP</button>
+              </div>
+
+              <!-- OTP Verification -->
+              <div class="form-group" style="display: none;" id="otpSection">
+                <label for="otp" class="form-label">Enter OTP</label>
+                <input type="text" class="text-box" id="otp" name="otp" placeholder="Enter the OTP received" required>
+                <button type="button" class="btn" onclick="verifyOtp()">Verify OTP</button>
+              </div>
+
               <!-- Submit Button -->
-              <button type="submit" id="submitBtn" class="btn">Submit</button>
+              <div class="form-group">
+                <button type="submit" id="submitBtn" class="btn" disabled>Submit</button>
+              </div>
             </form>
           </div>
         </div>
       </section>
+
         
         <!-- Footer -->
         <footer class="site-footer flex-item" style="padding-top: 5%;">
