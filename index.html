@@ -344,7 +344,6 @@
   </style>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
   
   <div class="site-wrap">
 
@@ -723,18 +722,28 @@
                 </div>
                 <div style="flex: 1;">
                   <label for="mobile" class="form-label">Mobile Number <span class="required">*</span></label>
-                  <div style="display: flex; align-items: center;">
-                    <select id="countryCode" name="countryCode" style="padding: 10px; margin-right: 10px;width: 18%;" required>
+                  <!-- <div style="display: flex; align-items: center;">
+                    <select id="countryCode" name="countryCode" style="padding: 10px; margin-right: 10px; width: 18%;" required>
                       <option value="+91" selected>+91 (India)</option>
                       <option value="+1">+1 (US)</option>
                       <option value="+44">+44 (UK)</option>
-                      <option value="+61">+61 (Australia)</option>
+                      <option value="+61">+61 (Australia)</option> -->
                       <!-- Add more country codes as needed -->
                     </select>
-                    <input type="text" class="text-box" id="mobile" name="mobile" placeholder="Enter your mobile number" style="flex: 1; padding: 10px;" required>
+                    <input type="text" class="text-box" id="mobile" name="mobile" placeholder="Enter your mobile number" style="width: 100%; padding: 10px;" required>
+                    <!-- <button type="button" id="sendOtpBtn" class="btn" style="margin-left: 10px;" onclick="sendOtp()">Send OTP</button> -->
                   </div>
                 </div>
               </div>
+
+              <!-- OTP Verification Field -->
+              <!-- <div class="form-group" style="display: none; margin-top: 10px;" id="otpSection">
+                <label for="otp" class="form-label">Enter OTP</label>
+                <div style="display: flex; align-items: center;">
+                  <input type="text" class="text-box" id="otp" name="otp" placeholder="Enter the OTP received" style="flex: 1; padding: 10px;" required>
+                  <button type="button" class="btn" style="margin: 4px;width: 25%;" onclick="verifyOtp()">Verify OTP</button>
+                </div>
+              </div> -->
 
               <!-- Email and Company Name -->
               <div class="form-group" style="display: flex; gap: 20px; align-items: center;">
@@ -772,26 +781,15 @@
                 <textarea id="notes" class="text-box" name="notes" rows="4" placeholder="Enter any additional information (optional)"></textarea>
               </div>
 
-              <!-- OTP Button -->
-              <div class="form-group" style="margin-top: 20px;">
-                <button type="button" id="sendOtpBtn" class="btn" onclick="sendOtp()">Send OTP</button>
-              </div>
-
-              <!-- OTP Verification -->
-              <div class="form-group" style="display: none;" id="otpSection">
-                <label for="otp" class="form-label">Enter OTP</label>
-                <input type="text" class="text-box" id="otp" name="otp" placeholder="Enter the OTP received" required>
-                <button type="button" class="btn" onclick="verifyOtp()">Verify OTP</button>
-              </div>
-
               <!-- Submit Button -->
               <div class="form-group">
-                <button type="submit" id="submitBtn" class="btn" disabled>Submit</button>
+                <button type="submit" id="submitBtn" class="btn">Submit</button>
               </div>
             </form>
           </div>
         </div>
       </section>
+
 
         
         <!-- Footer -->
@@ -976,18 +974,8 @@
           return;
         }
 
-        // Simulate OTP sending (replace with real API call)
-        alert(`OTP sent to ${mobileNumber}`);
-      });
-
-      document.getElementById('quoteForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const otp = document.getElementById('otp').value;
-        if (!otp || otp.length !== 6) {
-          alert('Please enter a valid 6-digit OTP.');
-          return;
-        }
+        // Simulate OTP sending 
+       
 
         // Proceed with form submission
         alert('Form submitted successfully!');
@@ -1000,13 +988,13 @@
     });
 
     // Handle OTP generation
-document.getElementById('sendOtp').addEventListener('click', function () {
-  const mobile = document.getElementById('mobile').value;
+    document.getElementById('sendOtp').addEventListener('click', function () {
+      const mobile = document.getElementById('mobile').value;
 
-  if (!mobile || mobile.length !== 10 || isNaN(mobile)) {
-    alert('Please enter a valid 10-digit mobile number.');
-    return;
-  }
+      if (!mobile || mobile.length !== 10 || isNaN(mobile)) {
+        alert('Please enter a valid 10-digit mobile number.');
+        return;
+      }
 
   // Send OTP to the backend
   fetch('process_otp.php', {
@@ -1076,6 +1064,87 @@ document.getElementById('sendOtp').addEventListener('click', function () {
     overlay.style.display = 'none';
   });
 </script>
+
+  
+
+<!-- JACASCRIPT FOR PROCESS_OTP.PHP -->
+
+<!-- <script src="process_otp.php">
+  // Function to send OTP
+function sendOtp() {
+    const countryCode = document.getElementById("countryCode").value;
+    const mobile = document.getElementById("mobile").value;
+
+    if (!mobile) {
+        alert("Please enter your mobile number.");
+        return;
+    }
+
+    // Send data to backend
+    fetch("process_otp.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            action: "generate",
+            mobile: `${countryCode}${mobile}`,
+        }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                alert("OTP sent successfully!");
+                document.getElementById("otpSection").style.display = "flex"; // Show OTP section
+            } else {
+                alert(data.message || "Failed to send OTP. Please try again.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error sending OTP:", error);
+            alert("An error occurred while sending OTP.");
+        });
+}
+
+// Function to verify OTP
+function verifyOtp() {
+    const otp = document.getElementById("otp").value;
+
+    if (!otp) {
+        alert("Please enter the OTP.");
+        return;
+    }
+
+    // Send data to backend
+    fetch("process_otp.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            action: "verify",
+            otp: otp,
+        }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                alert("OTP verified successfully!");
+                document.getElementById("submitBtn").disabled = false; // Enable submit button
+            } else {
+                alert(data.message || "Invalid OTP. Please try again.");
+            }
+        })
+        .catch((error) => {
+            console.error("Error verifying OTP:", error);
+            alert("An error occurred while verifying OTP.");
+        });
+}
+
+
+</script> -->
+
+
 <!-- chatbot start -->
 <script>
   const chatbotIcon = document.getElementById("chatbot-icon");
