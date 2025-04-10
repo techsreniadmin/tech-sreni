@@ -15,7 +15,10 @@ body {
   color: #818181;
   font-weight: 300;
   font-size: 15px;
-  background: #EEEEEE;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: none !important;
   scroll-behavior: smooth;  
 }
   /* @media (min-width: 1080px) {
@@ -326,8 +329,8 @@ h1, h2, h3, h4, h5,
   height: 100%;
   z-index: -1; }
 
-.particlehead {
-  position: absolute; }
+/* .particlehead {
+  position: absolute; } */
 
 /* Navbar */
 .site-navbar {
@@ -646,7 +649,7 @@ h1, h2, h3, h4, h5,
   background-repeat: no-repeat;
   background-position: top;
   background-position: center center;
-  background: #E5E5E5 !important; }
+  background: #e5e5e577 !important; }
   .site-blocks-cover.overlay {
     position: relative; }
     .site-blocks-cover.overlay:before {
@@ -656,7 +659,7 @@ h1, h2, h3, h4, h5,
       bottom: 0;
       right: 0;
       top: 0;
-      background: rgba(0, 0, 0, 0.4); }
+      background: rgba(0, 0, 0, 0); }
   .site-blocks-cover .player {
     position: absolute;
     bottom: -250px;
@@ -2120,6 +2123,63 @@ img.img-fluid-logo {
 button#submitBtn {
   padding: 5px 50px 5px 50px;
 }
+
+/* MATRIX HERO CSS */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 93%);
+}
+
+#matrixCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
 
 /* ......................................................After submit ensuring redirection....................................... */
 

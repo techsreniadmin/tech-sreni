@@ -125,7 +125,7 @@
     }
 
     /* Overlay */
-    .overlay {
+    /* .overlay {
       display: none;
       position: fixed;
       top: 0;
@@ -134,7 +134,7 @@
       height: 100%;
       background: rgba(0, 0, 0, 0.6);
       z-index: 999;
-    }
+    } */
 
     .whatsapp-button {
       position: fixed;
@@ -468,14 +468,14 @@
     </header>
 
 
-    <div class="particlehead"></div>
+    <div></div>
     <!-- <div class="container"> -->
-      <div class="site-blocks-cover">
+      <div class="site-blocks-cover overlay">
+        <canvas id="matrixCanvas"></canvas>
+        <div class="overlay"></div>
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
-
             <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
-
               <div class="row justify-content-center mb-4">
                 <div class="col-md-10 text-center">
                   <h1>Empowering Your Business Through <span class="typed-words"></span></h1>
@@ -483,11 +483,11 @@
                   <button id="showEnquiryForm" class="btn"><a href="#services-section">Explore our Services</a></button>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-      </div>  
+      </div>
+       
       <!-- </div> -->
 
       <!-- ABOUT US -->
@@ -919,7 +919,11 @@
     <script src="js/three.min.js"></script>
     <script src="js/TweenMax.min.js"></script>
     <script src="js/OBJLoader.js"></script>
-    <script src="js/ParticleHead.js"></script>
+    <!-- <script src="js/ParticleHead.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="js/matrix.js"></script>
+    
+
 
     <script src="js/jquery.sticky.js"></script>
 
