@@ -2420,3 +2420,17 @@ h1 span {
       padding: 0.5rem;
   }
 }
+
+/* ...........................................DARK MODE................................................ */
+
+/* Default Light Mode Logo */
+.logo {
+  content: url('images/logo.png');
+}
+
+/* Dark Mode Logo */
+@media (prefers-color-scheme: dark) {
+  .logo {
+    content: url('images/logo-darkmode.png');
+  }
+}
