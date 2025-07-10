@@ -644,50 +644,6 @@ h1, h2, h3, h4, h5,
 .typed-words {
   font-weight: 700; }
 
-.site-blocks-cover {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-position: center center;
-  background: #e5e5e577 !important; }
-  .site-blocks-cover.overlay {
-    position: relative; }
-    .site-blocks-cover.overlay:before {
-      position: absolute;
-      content: "";
-      left: 0;
-      bottom: 0;
-      right: 0;
-      top: 0;
-      background: rgba(0, 0, 0, 0); }
-  .site-blocks-cover .player {
-    position: absolute;
-    bottom: -250px;
-    width: 100%; }
-  .site-blocks-cover, .site-blocks-cover > .container > .row {
-    min-height: 600px;
-    height: calc(100vh); }
-  .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover > .container > .row {
-    min-height: 400px;
-    height: calc(20vh); }
-  .site-blocks-cover h1 {
-    font-size: 3rem;
-    font-weight: 300;
-    color: #21325E;
-    text-transform: uppercase; }
-    @media (max-width: 991.98px) {
-      .site-blocks-cover h1 {
-        font-size: 2rem; } }
-  .site-blocks-cover p {
-    font-size: 1.2rem;
-    line-height: 1.5; }
-  .site-blocks-cover .intro-text {
-    font-size: 16px;
-    line-height: 1.5; }
-  @media (max-width: 991.98px) {
-    .site-blocks-cover .display-1 {
-      font-size: 3rem; } }
-
 .site-block-subscribe .btn {
   padding-left: 20px;
   padding-right: 20px; }
@@ -2062,7 +2018,7 @@ h1, h2, h3, h4, h5,
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   /* margin-right: 0px !important; */
   /* margin-left: 2% !important; */
-  padding-bottom: 16% !important;
+  padding-bottom: 0% !important;
   background-color: #182444;
   width: 100%;
 }
@@ -2123,63 +2079,6 @@ img.img-fluid-logo {
 button#submitBtn {
   padding: 5px 50px 5px 50px;
 }
-
-/* MATRIX HERO CSS */
-
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-}
-
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin: 0.5rem 0 0;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: rgba(255, 255, 255, 93%);
-}
-
-#matrixCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-
 
 /* ......................................................After submit ensuring redirection....................................... */
 
@@ -2519,5 +2418,19 @@ h1 span {
 @media (max-width: 320px) {
   .service-item {
       padding: 0.5rem;
+  }
+}
+
+/* ...........................................DARK MODE................................................ */
+
+/* Default Light Mode Logo */
+.logo {
+  content: url('images/logo.png');
+}
+
+/* Dark Mode Logo */
+@media (prefers-color-scheme: dark) {
+  .logo {
+    content: url('images/logo-darkmode.png');
   }
 }
