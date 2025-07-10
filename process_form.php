@@ -9,7 +9,7 @@ $budget = $_POST['budget'];
 $notes = $_POST['notes'];
 
 // Email configuration
-$to = "info.8bittech@gmail.com"; // Replace with your email
+$to = "info.techsreni@gmail.com"; // Replace with your email
 $subject = "New Enquiry Received";
 $message = "
     <h2>New Enquiry</h2>
